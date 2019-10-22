@@ -7,16 +7,36 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" type= text/css href="/Users/neilhammerle/Desktop/unit-4-game/assets/css/reset.css">
+    <link rel="stylesheet" type= text/css href="/Users/neilhammerle/Desktop/unit-4-game/assets/css/style.css">
     <title>Crystal Collector Game</title>
   </head>
   <body>
         <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                   <h1 class="text-center" class="display-4">Crystals Collector!</h1>
-                  <p class="text-center" class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                  <p class="text-center" class="lead">You will be given a random number at the start of the game.</p> 
+                  <p class="text-center" class="lead">There are four crystals below.</p> 
+                  <p class="text-center" class="lead">By clicking on a crystal you will add a specific amoint of points to you total score.</p> 
+                  <p class="text-center" class="lead">You win the game by matching your total goes above the random number. </p> 
+                  <p class="text-center" class="lead">The value of each crystal is hidden from you until you click on it. </p> 
+                  <p class="text-center" class="lead">Each time when the game starts, the game will change the values of each crystal.</p>
                 </div>
               </div>
+        <div class ="container">
+          <div id ="guessingNumber">
+            <h2>Numbers to guess: <span class ="value"></span></h2>
+          </div>
+          <div id="scoreboard">
+            <h3><span id="status"></span></h3>
+            <h3>Wins: <span id="win"></span></h3>
+            <h3>Losses: <span id="loss"></span></h3>
+          </div>
+          <div id="crystals"></div>
+          <div id="totalScore">
+            <h2 id= "yts">Your Total Score is: <span id ="yourScore">0</span></h2>
+          </div>
+        </div>
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
