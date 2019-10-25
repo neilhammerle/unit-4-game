@@ -7,7 +7,52 @@
 }
 
 body {
-    background-image: url('..assets/images/background.jpg');
-    background-size: 75%;
+    background-image: url('../images/background.jpg');
+    background-size: 100%;
     border: solid 2px; 
+}
+
+h1 {
+    background-color: yellow;
+    color: purple;
+    display: inline;
+    clear: both;
+    padding: 10px;
+    border-radius: 30px;
+    font-family: 'Chilanka', cursive ;
+}
+
+p {
+    width: 100%;
+    height: 20px;
+    color: purple;
+    font-family: 'Chilanka', cursive ;
+}
+
+h2 {
+    color: purple;
+    font-family: 'Chilanka', cursive ;
+}
+
+h3 {
+    color: purple;
+    font-family: 'Chilanka', cursive ;
+}
+
+#guessingNumber {
+    background-color: lightgreen; 
+    float: left;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#scoreboard {
+    background-color: aqua;
+    display: inline-block;
+    padding: 15px 20px 10px 15px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 25px;
 }
