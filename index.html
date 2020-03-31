@@ -1,53 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type= text/css href="assets/css/reset.css">
-    <link rel="stylesheet" type= text/css href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Chilanka&display=swap" rel="stylesheet">
-    <title>Crystal Collector Game</title>
-  </head>
-  <body>
-        <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                  <h1 class="text-center" class="display-4">Crystals Collector!</h1>
-                  <p class="text-center" class="lead">You will be given a random number at the start of the game.</p> 
-                  <p class="text-center" class="lead">There are four crystals below.</p> 
-                  <p class="text-center" class="lead">By clicking on a crystal you will add a specific amoint of points to you total score.</p> 
-                  <p class="text-center" class="lead">You win the game by matching your total goes above the random number. </p> 
-                  <p class="text-center" class="lead">The value of each crystal is hidden from you until you click on it. </p> 
-                  <p class="text-center" class="lead">Each time when the game starts, the game will change the values of each crystal.</p>
-                </div>
-              </div>
-        <div class ="container">
-          <div id ="guessingNumber">
-            <h2>Numbers to guess: <span class ="value"></span></h2>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="assets\css\reset.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets\css\style.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="./assets/javascript/game.js"></script>
+  <title>Crystal Counter</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1 class="title">Welcome</h1>
+      <h2 class="title">To The</h2>
+      <h1 class="title">Crystal Guess Game!</h1>
+    </div>
+    <button class="button btn btn-primary">Start game!</button>
+    <div class="row">
+      <div class="col border col-8">
+        <h4 class="text-center">Here are your crystals!</h4>
+        <div class="row">
+          <img class="blue-1 crystal" src="./assets/images/Blue-Crystal.png" alt="blue crystal">
+          <img class="purple-2 crystal" src="./assets/images/Purple-Crystal.jpg" alt="purple crystal">
+          <img class="red-3 crystal" src="./assets/images/Red-Crystal.jpg" alt="red crystal">
+          <img class="yellow-4 crystal" src="./assets/images/Yellow-Crystal.jpg" alt="yellow crystal">
+        </div>
+        <div class="row">
+          <div class="winLose col border">
+            <h3 class="wins">Wins: 0</h3>
+            <h3 class="lose">Losses: 0</h3>
           </div>
-          <div id="scoreboard">
-            <h3><span id="status"></span></h3>
-            <h3>Wins: <span id="win"></span></h3>
-            <h3>Losses: <span id="loss"></span></h3>
+          <div class="col border">
+            <h3 class="text-center">Your Score:</h3>
+            <h1 class="text-center score" value=0>0</h1>
           </div>
-          <div id="crystals"></div>
-          <div id="totalScore">
-            <h2 id= "yts">Your Total Score is: <span id ="yourScore">0</span></h2>
+          <div class="col border">
+            <h3 class="text-center">Target Score:</h3>
+            <h1 class="text-center randomNum">0</h1>
           </div>
         </div>
-        <img src="assets/images/Blue-Crystal.png" class="imageCrystal" id="one" alt="Blue-Crystal" height="100" width="100">
-        <img src="assets/images/Red-Crystal.jpg" class="imageCrystal" id="two" alt="Red-Crystal" height="100" width="100">
-        <img src="assets/images/Purple-Crystal.jpg" class="imageCrystal" id="three" alt="Purple-Crystal" height="100" width="100">
-        <img src="assets/images/Yellow-Crystal.jpg" class="imageCrystal" id="one" alt="Yellow-Crystal" height="100" width="100">
-     <!-- Optional JavaScript -->
-     <script scr="game.js"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+      </div>
+
+
+
+
+      <div class="col border">
+        <h1>Instructions:</h1>
+        <p>You will be given a random number at the start of the game.</p>
+        <p>There are four crystals below. By clicking on a crystal, you will add a specific amount of points
+          to your total score.</p>
+        <p>You win the game by matching your total score to a randomly generated number. You lose the game
+          if your total score is greater than the random number.</p>
+        <p>The value of each crystal is hidden from you until you click on it.</p>
+        <p>Each time when the game starts, the game will change the values of each crystal.</p>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
 </html>

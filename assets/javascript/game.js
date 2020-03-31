@@ -1,57 +1,104 @@
-$(document).ready(function() {
-    crystals = ['assets/images/Blue-Crystal.png','assets/images/Purple-Crystal.jpg','assets/images/Red-Crystal.jpg','assets/images/Yellow-Crystal.jpg'];
-    var counter = 0;
-    var wins = 0;
-    var losses = 0;
-    $('#wins').text(wins);
-    $('#loss').text(losses);
+$(function () {
+    //declaring variables
+    var check = false, rand1, rand2, rand3, rand4, randnum, sum = 0, wins = 0, loses = 0, win = false, lose = false;
 
-    newCrystals();
-    newGame();
-    function newCrystals (){
-        var numbers = []
-        while(numbers.length <4){
-            var randomNumber = Math.ceil(Math.random()*15)
-            var found = false;
-            for (var i=0; i< numbers.length; i++) {
-                if (numbers[i] == randomNumber){
-                    found = true; break
-                }
-            }
+    //Before random values are set
+    $(".button").on("click", function () {
+        if (win === true) {
+            wins += 1;
+            $(".wins").text("Wins: " + wins);
+            console.log("fire");
         }
-        if (!found)numbers[numbers.length]= randomNumber;
+        if (lose === true) {
+            loses += 1;
+            $(".lose").text("Losses: " + loses);
+        }
+        check = true, win = false, lose = false;
+
+        rand1 = Math.floor(Math.random() * 12) + 1;
+        rand2 = Math.floor(Math.random() * 12) + 1;
+        rand3 = Math.floor(Math.random() * 12) + 1;
+        rand4 = Math.floor(Math.random() * 12) + 1;
+
+        randnum = Math.floor(Math.random() * 101) + 20;
+
+        console.log("rand1 = " + rand1 + " rand2 = " + rand2 + " rand3 = " + rand3 + " rand4 = " + rand4 + " randNum = " + randnum);
+        $(".randomNum").text(randnum);
+        sum = 0;
+        $(".score").text("0");
+    });
+
+    $(".blue-1").on("click", function () {
+        console.log("blue-1 was clicked!")
+        if (check == true) { addition1(); }
+        if (sum == randnum) {
+            win = true;
+            check = false;
+            alert("You Win! Hit Generate Number Again!");
+        }
+        if (sum > randnum) {
+            alert("You Lost!")
+            check = false;
+            lose = true;
+        }
+    });
+    $(".purple-2").on("click", function () {
+        console.log("purple-2 was clicked!")
+        if (check == true) { addition2(); }
+        if (sum == randnum) {
+            win = true;
+            check = false;
+            alert("You Win! Hit Generate Number Again!");
+        }
+        if (sum > randnum) {
+            alert("You Lost!")
+            check = false;
+            lose = true;
+        }
+    });
+    $(".red-3").on("click", function () {
+        console.log("red-3 was clicked!")
+        if (check == true) { addition3(); }
+        if (sum == randnum) {
+            win = true;
+            check = false;
+            alert("You Win! Hit Generate Number Again!");
+        }
+        if (sum > randnum) {
+            alert("You Lost!")
+            check = false;
+            lose = true;
+        }
+    });
+    $(".yellow-4").on("click", function () {
+        console.log("yellow-4 was clicked!")
+        if (check == true) { addition4(); }
+        if (sum == randnum) {
+            win = true;
+            check = false;
+            alert("You Win! Hit Generate Number Again!");
+        }
+        if (sum > randnum) {
+            alert("You Lost!")
+            check = false;
+            lose = true;
+        }
+    });
+
+    function addition4() {
+        sum += rand4;
+        $(".score").text(sum);
     }
-    for (i = 0; i < numbers.length; i++) {
-        var imageCrystal = $('<img>');
-        imageCrystal.attr('data-num', numbers [i]);
-        imageCrystal.attr('src', crystals[i]);
-        imageCrystal.attr('alt', 'crystals');
-        imageCrystal.addClass('crystalImage')
-        $('#crystals').append(imageCrystal);
+    function addition3() {
+        sum += rand3;
+        $(".score").text(sum);
     }
-    function newGame() {
-
-        counter = 0;
-        $ ('#yourScore').text(counter);
-
-        function randomIntFromInterval();
-
-        $('value').text(numberToGuess);
-
-        $('.crystalImage').on('click', function(){
-            counter = counter + parseInt($(this).data('num'));
-
-            $('#yourScore').text(counter);
-
-            if (counter == numberToGuess){
-                $('#status').text('You Lost!');
-                losses ++;
-                $('#loss').text(losses);
-                console,log(losses)
-                $('#crystals').empty();
-                newCrystals();
-                newGame();
-            }
-        });
+    function addition2() {
+        sum += rand2;
+        $(".score").text(sum);
+    }
+    function addition1() {
+        sum += rand1;
+        $(".score").text(sum);
     }
 });
